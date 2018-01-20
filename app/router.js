@@ -14,6 +14,7 @@ import Login from './containers/Login'
 import Home from './containers/Home'
 import Account from './containers/Account'
 import Detail from './containers/Detail'
+import Viewmap from './containers/Viewmap'
 
 const HomeNavigator = TabNavigator(
   {
@@ -33,6 +34,7 @@ const MainNavigator = StackNavigator(
   {
     HomeNavigator: { screen: HomeNavigator },
     Detail: { screen: Detail },
+    Viewmap: { screen: Viewmap },
   },
   {
     headerMode: 'float',

@@ -8,13 +8,13 @@ import { Button } from 'antd-mobile';
 import { NavigationActions } from '../utils'
 
 @connect()
-class Detail extends Component {
+class Viewmap extends Component {
   static navigationOptions = {
-    title: 'Detail',
+    title: 'Viewmap',
   }
 
   gotoDetail = () => {
-    this.props.dispatch(NavigationActions.navigate({ routeName: 'Detail' }))
+    this.props.dispatch(NavigationActions.navigate({ routeName: 'Viewmap' }))
   }
 
   goBack = () => {
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Detail
+export default Viewmap
