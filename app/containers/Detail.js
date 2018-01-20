@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native'
 import { connect } from 'react-redux'
 
 // import { Button } from '../components'
-import { Button } from 'antd-mobile';
+import { Button } from 'antd-mobile'
 
 import { NavigationActions } from '../utils'
 
@@ -24,8 +24,12 @@ class Detail extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button type="primary" onClick={this.gotoDetail} >Goto Detail</Button>
-        <Button type="warning" onClick={this.goBack} >Go Back</Button>
+        <Button type="primary" onClick={this.gotoDetail}>
+          Goto Detail
+        </Button>
+        <Button type="warning" onClick={this.goBack}>
+          Go Back
+        </Button>
       </View>
     )
   }

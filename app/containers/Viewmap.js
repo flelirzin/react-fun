@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import { connect } from 'react-redux'
+import MapView from 'react-native-maps'
 
 // import { Button } from '../components'
-import { Button } from 'antd-mobile';
+import { Button } from 'antd-mobile'
+
+const { width, height } = Dimensions.get('window')
 
 import { NavigationActions } from '../utils'
 
@@ -13,19 +16,27 @@ class Viewmap extends Component {
     title: 'Viewmap',
   }
 
-  gotoDetail = () => {
-    this.props.dispatch(NavigationActions.navigate({ routeName: 'Viewmap' }))
-  }
-
-  goBack = () => {
-    this.props.dispatch(NavigationActions.back({ routeName: 'Account' }))
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        <Button type="primary" onClick={this.gotoDetail} >Goto Detail</Button>
-        <Button type="warning" onClick={this.goBack} >Go Back</Button>
+        <MapView
+          style={styles.map}
+          region={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.0121,
+          }}
+        >
+          <MapView.Circle
+            center={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+            }}
+            radius={300}
+            fillColor="rgba(100, 100, 100, 0.5)"
+          />
+        </MapView>
       </View>
     )
   }
@@ -33,9 +44,14 @@ class Viewmap extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    ...StyleSheet.absoluteFillObject,
+    height,
+    width,
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
   },
 })
 
